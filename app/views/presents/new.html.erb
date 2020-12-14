@@ -1,0 +1,10 @@
+<%= form_for :presents do |f| %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br>
+     <%= f.label "Cost" %><br>
+    <%= f.text_field :cost %><br>
+    <%= f.label "Category" %><br>
+    <%= f.text_field :category %><br>
+     <%= f.label "Brand" %><br>
+    <%= f.submit "Create Present" %><br>
+<% end %>
