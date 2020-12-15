@@ -15,5 +15,8 @@ Wyatt = Recipient.create(name: "Wyatt", email: "wyatt@email.com")
 jordan.presents.create(name: "Slippers", category: "Clothing", brand: "Carhartt", cost: 45.00, recipient_id: 1)
 sarah.presents.create(name: "Purse", category: "Accessories", brand: "Coach", cost: "395.00", recipient_id: 2)
 
+#.build will create new object for has_many association
+#.to_build is for belongs_to association
+
 
 
