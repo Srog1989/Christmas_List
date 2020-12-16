@@ -1,8 +1,19 @@
+<h1>Signup</h1>
 <%= form_for :user do |f| %>
+<p>
+<fieldset>
     <%= f.label :name %><br>
     <%= f.text_field :name %><br>
+</p>
+</fieldset>
+
+<fieldset>
     <%= f.label "Email" %><br>
     <%= f.text_field :email %><br>
+</p>
+</fieldset>
+
+<fieldset>
     <%= f.label :password %><br>
     <%= f.password_field :password %><br><br>
     <%= f.submit "Create User" %><br>

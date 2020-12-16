@@ -1,7 +1,9 @@
 <%= form_for :recipient do |f| %>
     <%= f.label :name %><br>
     <%= f.text_field :name %><br>
+<br>
     <%= f.label "Email" %><br>
     <%= f.text_field :email %><br>
+<br>
     <%= f.submit "Create Recipient" %><br>
 <% end %>
