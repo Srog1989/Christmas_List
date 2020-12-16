@@ -1,1 +1,9 @@
-<%= @recipients.each do |r|%>
+<h1><%= "Welcome, #{@user.name}" %></h1>
+<br>
+<h3> Here are the people you have bought presents for:</h3>
+<% @recipients.each do |recipient|%>
+<%= link_to recipient.name, user_recipient_path(@user, recipient) %><br>
+<% recipient.presents.each do |p|%>
+<%= p.name %><br>
+<%end%>
+<%end%>

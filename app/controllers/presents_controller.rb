@@ -8,6 +8,9 @@ class PresentsController < ApplicationController
     end
 
     def show
-        @present = Preset
+       
     end
 end
+
+
+#

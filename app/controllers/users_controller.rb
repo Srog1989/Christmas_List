@@ -8,13 +8,13 @@ class UsersController < ApplicationController
     end
 
     def show
-        @user = user.find_by(id: params[:id])
+        @user = User.find_by(id: params[:id])
     end
 
     def create
         @user = User.new(user_params)
         if @user.save
-            redirect_to user_path
+            redirect_to user_recipients_path(@user)
         else
             render new_users_path
         end
