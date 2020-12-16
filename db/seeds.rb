@@ -13,7 +13,10 @@ Wyatt = Recipient.create(name: "Wyatt", email: "wyatt@email.com")
 
 
 jordan.presents.create(name: "Slippers", category: "Clothing", brand: "Carhartt", cost: 45.00, recipient_id: 1)
-sarah.presents.create(name: "Purse", category: "Accessories", brand: "Coach", cost: "395.00", recipient_id: 2)
+sarah.presents.create(name: "Football", category: "Sporting Goods", brand: "Wilson", cost: "25.00", recipient_id: 2)
+
+jordan.presents.create(name: "Sled", category: "Toys", brand: "Sled Brand", cost: 45.00, recipient_id: 2)
+sarah.presents.create(name: "Coat", category: "Clothing", brand: "Coach", cost: "395.00", recipient_id: 1)
 
 #.build will create new object for has_many association
 #.to_build is for belongs_to association

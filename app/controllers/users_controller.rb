@@ -20,14 +20,6 @@ class UsersController < ApplicationController
         end
     end
 
-    # def create
-    #     @user = User.create(user_params)
-    #     return redirect_to new_users_path unless @user.save
-    #         session[:user_id] = @user.id
-    #     redirect_to user_path(@user)
-    # end
-
-
     private
 
     def user_params

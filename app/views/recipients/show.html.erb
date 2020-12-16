@@ -2,4 +2,7 @@
 <br>
 <%= @recipient.email %>
 <br>
+<%@recipient.presents.each do |present| %>
+    <%= present.name%><br>
+<% end %>
 

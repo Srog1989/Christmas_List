@@ -2,8 +2,10 @@
 <br>
 <h3> Here are the people you have bought presents for:</h3>
 <% @recipients.each do |recipient|%>
-<%= link_to recipient.name, user_recipient_path(@user, recipient) %><br>
+<h4><%= link_to recipient.name, user_recipient_path(@user, recipient) %></h4>
 <% recipient.presents.each do |p|%>
-<%= p.name %><br>
+<h5><%= p.name %></h5>
 <%end%>
 <%end%>
+
+<%= link_to "Add A New Recipient", new_user_recipient_path(@user)%>
