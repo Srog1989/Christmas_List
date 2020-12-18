@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
     end
     
     def new
+        #session.clear
         @user = User.new
     end
 

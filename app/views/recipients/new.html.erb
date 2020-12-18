@@ -1,4 +1,4 @@
-<%= form_for @recipient do |f| %>
+<%= form_for @user.recipients.build do |f| %>
     <%= f.label :name %><br>
     <%= f.text_field :name %><br>
 <br>

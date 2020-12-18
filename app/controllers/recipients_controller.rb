@@ -1,21 +1,22 @@
 class RecipientsController < ApplicationController
     def index
-        @user = User.find(params[:user_id])
-        @recipients = @user.recipients
+        #binding.pry
+        @recipients = current_user.recipients
     end
     
     def new
-        @user = User.find(params[:user_id])
+        #binding.pry
+        @user = current_user
         @recipient = Recipient.new
     end
 
     def create
       #binding.pry
        #try define current_user helper and call here
-        @user = User.find_by(id: session[:user_id])
-        @user.recipient.create(recipient_params)
+       
+        @recipient = Recipient.create(recipient_params)
         return redirect_to new_recipient_path unless @recipient.save
-        redirect_to user_recipients_path(@user)
+        redirect_to recipient_path(@recipient)
     end
 
     def show

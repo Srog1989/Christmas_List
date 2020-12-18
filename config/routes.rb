@@ -11,12 +11,10 @@ Rails.application.routes.draw do
   
   resources :presents 
   
-  resources :users do 
-      resources :recipients
-  end
+  resources :users
 
-  resources :users do 
-    resources :presents
+  resources :presents do 
+    resources :recipients
   end
 
 end

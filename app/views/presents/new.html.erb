@@ -1,19 +1,7 @@
-<%= form_for :presents do |f| %>
+<%= form_for @present do |f| %>
 
-    <p> Please select a Recipient: </p>
 <div>
-    <%= f.collection_select :recipient_id, Recipient.all, :name %>
-</div>
-    <p> Or Create a new Recipient: </p>
-    <div>
-    <%= f.fields_for :recipient do |recipient| %>
-    <%= r.label :name %>
-    <%= r.text_field :name %>
-    <%= r.label :email %>
-    <%= r.text_field :email %>
-    <%end%>
-
-    <%= f.label :name %><br>
+    <%= f.label :present_name %><br>
     <%= f.text_field :name %><br>
 </div>
 <div>
@@ -28,5 +16,19 @@
      <%= f.label :brand %><br>
      <%= f.text_field :brand %><br>
 </div>
+    <p> Please select a Recipient: </p>
+<div>
+    <%= f.collection_select :recipient_id, Recipient.all, :name, :name %>
+</div>
+    <p> Or Create a new Recipient: </p>
+    <div>
+    <%= f.fields_for :recipients do |recipient| %>
+    <%= f.label :name %>
+    <%= recipient.text_field :name %>
+    <%= f.label :email %>
+    <%= recipient.text_field :email %>
+    <%end%>
+</div>
+<br>
     <%= f.submit "Create Present" %><br>
 <% end %>

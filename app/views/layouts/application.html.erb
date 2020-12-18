@@ -11,7 +11,7 @@
   <div>
   <% if current_user %>
     <%= link_to "Log Out", logout_path, method: :delete%>
-    <%= link_to "New Present", new_present_path %>
+    <%= link_to "New Present", new_user_present_path(current_user) %>
     <%end%>
   <div>
 
