@@ -1,4 +1,8 @@
 class SessionsController < ApplicationController
+    def home
+        
+    end
+    
     def new
         @user = User.new
     end
@@ -15,7 +19,7 @@ class SessionsController < ApplicationController
 
 
     def destroy
-        session.delete :user_id
+        session.delete(:user_id)
         redirect_to '/'
     end
 end
