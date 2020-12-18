@@ -19,7 +19,6 @@ class RecipientsController < ApplicationController
     end
 
     def show
-       
         @recipient = Recipient.find_by(id: params[:id])
     end
 
