@@ -1,6 +1,7 @@
 class PresentsController < ApplicationController
     def new
         @present = Present.new
+        @present.build_recipient
     end
     
     def index
@@ -18,7 +19,7 @@ class PresentsController < ApplicationController
 
 
     def present_params
-        params.require(:present).permit(:name, :brand, :cost, :user_id, :recipient_id)
+        params.require(:present).permit(:name, :brand, :cost, :user_id, :recipient_id, recipient_attrifbutes: [:name, :email])
     end
 end
 

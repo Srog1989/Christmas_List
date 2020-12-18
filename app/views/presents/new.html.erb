@@ -1,15 +1,32 @@
 <%= form_for :presents do |f| %>
+
+    <p> Please select a Recipient: </p>
+<div>
+    <%= f.collection_select :recipient_id, Recipient.all, :name %>
+</div>
+    <p> Or Create a new Recipient: </p>
+    <div>
+    <%= f.fields_for :recipient do |recipient| %>
+    <%= r.label :name %>
+    <%= r.text_field :name %>
+    <%= r.label :email %>
+    <%= r.text_field :email %>
+    <%end%>
+
     <%= f.label :name %><br>
     <%= f.text_field :name %><br>
-<br>
-     <%= f.label "Cost" %><br>
+</div>
+<div>
+     <%= f.label :cost %><br>
     <%= f.text_field :cost %><br>
-<br>
-    <%= f.label "Category" %><br>
+</div>
+<div>
+    <%= f.label :category %><br>
     <%= f.text_field :category %><br>
-<br>
-     <%= f.label "Brand" %><br>
+</div>
+<div>
+     <%= f.label :brand %><br>
      <%= f.text_field :brand %><br>
-<br>
+</div>
     <%= f.submit "Create Present" %><br>
 <% end %>
