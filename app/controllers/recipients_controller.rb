@@ -13,7 +13,7 @@ class RecipientsController < ApplicationController
       #binding.pry
        #try define current_user helper and call here
         @user = User.find_by(id: session[:user_id])
-        @user.Recipient.create(recipient_params)
+        @user.recipient.create(recipient_params)
         return redirect_to new_recipient_path unless @recipient.save
         redirect_to user_recipients_path(@user)
     end
