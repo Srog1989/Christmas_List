@@ -14,7 +14,7 @@ class UsersController < ApplicationController
         if @user.save
             redirect_to user_recipients_path(@user)
         else
-            render new_users_path
+            render user_path
         end
     end
 

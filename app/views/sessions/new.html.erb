@@ -1,4 +1,14 @@
-<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-  Email:<input email=email><br>
-  <input type=submit value='login'>
+<h1>Log In</h1>
+<%= form_for(:user) do |f| %>
+<p>
+<fieldset>
+    <%= f.label "Email" %><br>
+    <%= f.text_field :email %><br>
+</p>
+</fieldset>
+
+<fieldset>
+    <%= f.label :password %><br>
+    <%= f.password_field :password %><br><br>
+    <%= f.submit "Log In" %><br>
 <% end %>
