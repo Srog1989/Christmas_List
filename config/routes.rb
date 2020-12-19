@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   resources :presents 
   
   resources :users
-
-  resources :presents do 
-    resources :recipients
+  
+  resources :users do 
+    resources :presents
   end
 
 end

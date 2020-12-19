@@ -1,15 +1,16 @@
 class PresentsController < ApplicationController
     def new
-        @present = Present.new
-       #
+        @user = User.find(params[:user_id])
+        @present = @user.presents.build
     end
     
     def index
         @presents = Present.all
+        @recipients = current_user.recipients
     end
     
     def create
-        binding.pry
+        #binding.pry
         @present = current_user.present.build(present_params)
         redirect_to new_present_path(@present)
     end

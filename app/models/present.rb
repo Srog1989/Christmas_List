@@ -1,7 +1,7 @@
 class Present < ApplicationRecord
     belongs_to :user
     belongs_to :recipient
-    accepts_nested_attributes_for :recipients
+    #accepts_nested_attributes_for :recipients
 
     def recipients_attributes=(recipient_attributes)
         recipient_attributes.values.each do |recipient_attribute|
