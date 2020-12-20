@@ -1,7 +1,8 @@
 <h1>Add a Present</h1>
+<%= render partial: '/layouts/errors', locals: {object: @present}%>
 
 <%= form_for @present do |f| %>
-
+<p>
 <div>
     <%= f.label :present_name %><br>
     <%= f.text_field :name %><br>
@@ -19,7 +20,7 @@
      <%= f.text_field :brand %><br>
 </div>
 
-    <p> Or Create a new Recipient: </p>
+    <p> Create a new Recipient: </p>
 <div>
     <%= f.fields_for :recipient, @present.build_recipient do |recipient| %>
     <%= f.label :name %>
