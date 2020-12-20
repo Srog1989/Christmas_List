@@ -5,4 +5,6 @@
     Brand: <%= @present.brand%><br>
     Recipient Name: <%= @present.recipient.name%><br>
     Recipient Email: <%= @present.recipient.email%><br>
+    <%= link_to "Edit this Present", edit_present_path(@present) %><br>
+    <%= link_to "Delete this Present", present_path(@present), method: :delete, data: { confirm: "Delete this present?"}%><br>
 

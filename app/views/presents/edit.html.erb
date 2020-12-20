@@ -1,4 +1,4 @@
-<h1>Add a Present</h1>
+<h1>Edit this Present</h1>
 <%= render partial: '/layouts/errors', locals: {object: @present}%>
 
 <%= form_for @present do |f| %>
@@ -20,19 +20,19 @@
      <%= f.text_field :brand %><br>
 </div>
 
-    <p> Create a new Recipient: </p>
+    <p> Edit Recipient: </p>
 <div>
-    <%= f.fields_for :recipient, @present.build_recipient do |recipient| %>
+    <%= f.fields_for :recipient do |recipient| %>
     <%= f.label :name %>
     <%= recipient.text_field :name %>
     <%= f.label :email %>
     <%= recipient.text_field :email %>
-      <%= f.label :address %>
+     <%= f.label :address %>
     <%= recipient.text_field :address %>
       <%= f.label :favorite_color%>
     <%= recipient.text_field :favorite_color %>
     <%end%>
 </div>
 <br>
-    <%= f.submit "Create Present" %><br>
+    <%= f.submit "Update Present" %><br>
 <% end %>
