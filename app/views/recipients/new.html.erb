@@ -1,4 +1,7 @@
-<%= form_for @user.recipients.build do |f| %>
+<h1> Add a new Recipient</h1>
+<%= render partial: '/layouts/errors', locals: {object: @recipient}%>
+<p>
+<%= form_for @recipient do |f| %>
     <%= f.label :name %><br>
     <%= f.text_field :name %><br>
 <br>
