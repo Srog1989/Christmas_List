@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 2020_12_13_023314) do
   create_table "recipients", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.string "address"
+    t.string "favorite_color"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -36,6 +38,8 @@ ActiveRecord::Schema.define(version: 2020_12_13_023314) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
+    t.string "uid"
+    t.string "provider"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
