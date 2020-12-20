@@ -1,8 +1,15 @@
-<h3><%= @recipient.name %></h3>
+<h2><%= " #{@recipient.name}'s information:" %></h2>
 <br>
-<%= @recipient.email %>
+Email: <%= @recipient.email %>
 <br>
-<%@recipient.presents.each do |present| %>
+Address: <%= @recipient.address %>
+<br>
+Favorite Color: <%= @recipient.favorite_color %>
+<br>
+Purchased Presents: <%@recipient.presents.each do |present| %>
     <%= present.name%><br>
 <% end %>
+ <%= link_to "Edit this Recipient", edit_recipient_path(@recipient) %><br>
+<%= link_to "Delete this Recipient", recipient_path(@recipient), method: :delete, data: { confirm: "Delete this recipient?"}%><br>
+
 

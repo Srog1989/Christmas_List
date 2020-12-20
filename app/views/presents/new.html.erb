@@ -19,6 +19,10 @@
      <%= f.label :brand %><br>
      <%= f.text_field :brand %><br>
 </div>
+    <p> Please select a Recipient: </p>
+<div>
+    <%= f.collection_select :recipient_id, Recipient.all, :id, :name, :include_blank => true %>
+</div>
 
     <p> Create a new Recipient: </p>
 <div>
