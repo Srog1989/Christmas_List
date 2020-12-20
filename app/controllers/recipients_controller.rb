@@ -7,16 +7,18 @@ class RecipientsController < ApplicationController
     def new
         #binding.pry
         @user = current_user
-        @recipient = Recipient.new
+        @recipient = @user.recipients.build
     end
 
     def create
       #binding.pry
-       #try define current_user helper and call here
        
         @recipient = Recipient.create(recipient_params)
-        return redirect_to new_recipient_path unless @recipient.save
-        redirect_to recipient_path(@recipient)
+        if @recipient.save
+            redirect_to recipient_path(@recipient)
+        else
+            render :new
+        end
     end
 
     def show
