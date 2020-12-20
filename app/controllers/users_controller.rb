@@ -2,7 +2,7 @@ class UsersController < ApplicationController
    
 
     def new
-        @user = current_user
+        @user = User.new
     end
 
     def show
@@ -12,9 +12,10 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
+            session[:user_id] = @user.id
             redirect_to user_recipients_path(@user)
         else
-            render user_path
+            render :new
         end
     end
 
