@@ -9,10 +9,14 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <div>
-   <%= button_to "Log in with Google", '/auth/google_oauth2'%>
+   
   <% if current_user %>
-    <%= link_to "Log Out", logout_path, method: :delete%>
-    <%= link_to "New Present", new_user_present_path(current_user) %>
+    <%= link_to "Log Out", logout_path, method: :delete%> |
+    <%= link_to "New Present", new_user_present_path(current_user) %> |
+    <%= link_to "Address Book", recipients_path %> |
+    <%= link_to "Home", user_presents_path(current_user) %>
+  <% else %>
+    <%= button_to "Log in with Google", '/auth/google_oauth2'%>
     <%end%>
   <div>
 
