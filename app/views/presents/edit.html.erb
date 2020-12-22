@@ -20,19 +20,6 @@
      <%= f.text_field :brand %><br>
 </div>
 
-    <p> Edit Recipient: </p>
-<div>
-    <%= f.fields_for :recipient do |recipient| %>
-    <%= f.label :name %>
-    <%= recipient.text_field :name %>
-    <%= f.label :email %>
-    <%= recipient.text_field :email %>
-     <%= f.label :address %>
-    <%= recipient.text_field :address %>
-      <%= f.label :favorite_color%>
-    <%= recipient.text_field :favorite_color %>
-    <%end%>
-</div>
 <br>
     <%= f.submit "Update Present" %><br>
 <% end %>

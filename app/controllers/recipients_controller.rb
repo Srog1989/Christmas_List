@@ -1,18 +1,16 @@
 class RecipientsController < ApplicationController
+    before_action :verified_user
+
     def index
-        #binding.pry
         @recipients = current_user.recipients
     end
     
     def new
-        #binding.pry
         @user = current_user
         @recipient = @user.recipients.build
     end
 
     def create
-      #binding.pry
-       
         @recipient = Recipient.create(recipient_params)
         if @recipient.save
             redirect_to recipient_path(@recipient)

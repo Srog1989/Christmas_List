@@ -1,4 +1,6 @@
 class PresentsController < ApplicationController
+    before_action :verified_user
+    
     def new
         @user = current_user
         @present = @user.presents.build
@@ -43,13 +45,18 @@ class PresentsController < ApplicationController
         end
       end
 
+      
+
     private
 
 
     def present_params
         params.require(:present).permit(:name, :brand, :cost, :category,  :user_id, :recipient_id, recipient_attributes: [:email, :name, :address, :favorite_color, :id])
     end
+
+    def set_present
+        @present = Present.find(params[:id])
+    end
 end
 
 
-#
