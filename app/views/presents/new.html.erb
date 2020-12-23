@@ -18,22 +18,29 @@
      <%= f.label :brand %><br>
      <%= f.text_field :brand %><br>
 </div>
-    <p> Please select a Recipient: </p>
+    <p> Select an existing Recipient: </p>
 <div>
     <%= f.collection_select :recipient_id, Recipient.all, :id, :name, :include_blank => true %>
 </div>
 
-    <p> Create a new Recipient: </p>
+    <p> Or Create a new Recipient: </p>
 <div>
     <%= f.fields_for :recipient, @present.build_recipient do |recipient| %>
-    <%= f.label :name %>
-    <%= recipient.text_field :name %>
-    <%= f.label :email %>
-    <%= recipient.text_field :email %>
-      <%= f.label :address %>
-    <%= recipient.text_field :address %>
-      <%= f.label :favorite_color%>
-    <%= recipient.text_field :favorite_color %>
+ <div>
+    <%= f.label :name %><br>
+    <%= recipient.text_field :name %><br>
+</div>
+<div>
+    <%= f.label :email %><br>
+    <%= recipient.text_field :email %><br>
+</div>
+<div>
+      <%= f.label :address %><br>
+    <%= recipient.text_field :address %><br>
+</div>
+<div>
+      <%= f.label :favorite_color%><br>
+    <%= recipient.text_field :favorite_color %><br>
     <%end%>
 </div>
 <br>
