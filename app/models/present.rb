@@ -3,8 +3,7 @@ class Present < ApplicationRecord
     belongs_to :recipient
     validates :name, :cost, :brand, :category, presence: true
     accepts_nested_attributes_for :recipient, reject_if: :all_blank
-
-    #scope: :order_by_present_datetime, -> {order(present(:present_datetime)}
+    scope :order_recipients_by, -> { order(name: :asc) }
 
     # def recipient_attributes=(recipient_attributes)
     #     recipient = Recipient.find_or_create_by(recipient_attributes)

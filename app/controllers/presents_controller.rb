@@ -10,7 +10,7 @@ class PresentsController < ApplicationController
     
     def index
         @presents = Present.all
-        @recipients = current_user.recipients
+        @recipients = current_user.recipients.order_recipients_by
     end
     
     def create

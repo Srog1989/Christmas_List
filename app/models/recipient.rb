@@ -4,4 +4,6 @@ class Recipient < ApplicationRecord
     validates :email, uniqueness: true, presence: true
     validates :name, presence: true
     
+    scope :order_recipients_by, -> { order(name: :asc) }
+    
 end

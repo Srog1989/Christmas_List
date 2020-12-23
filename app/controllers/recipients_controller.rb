@@ -2,7 +2,7 @@ class RecipientsController < ApplicationController
     before_action :verified_user
 
     def index
-        @recipients = current_user.recipients
+        @recipients = current_user.recipients.order_recipients_by
     end
     
     def new
