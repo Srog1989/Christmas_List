@@ -54,7 +54,7 @@ class PresentsController < ApplicationController
     def set_present
         @present = Present.find_by(id: params[:id])
         if !@present 
-            flash[:message] = "Present was not found."
+            flash[:error] = "Present was not found."
              redirect_to user_presents_path(@present)
         end
     end
