@@ -4,7 +4,6 @@ class SessionsController < ApplicationController
     end
 
     def omniauth
-        # binding.pry
             user = User.find_or_create_by(uid: auth['uid'], provider: auth['provider']) do |u|
             u.name = auth['info']['name']
             u.email = auth['info']['email']
@@ -15,13 +14,12 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             redirect_to user_presents_path(user)
         else
-            flash[:message] = user.errors.full_messages.join(",")
+            flash[:error] = user.errors.full_messages.join(",")
             redirect_to login_path
         end
     end
     
     def new
-        
         @user = User.new
     end
 
