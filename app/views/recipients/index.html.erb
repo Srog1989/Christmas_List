@@ -1,11 +1,12 @@
 <h1><%= "Welcome, #{current_user.name}" %></h1>
 <br>
-<h3> Here are the people you have bought presents for:</h3>
+<h2> Children on the nice list:</h2>
 <% @recipients.each do |recipient|%>
-<h4><%= link_to recipient.name, recipient_path(recipient) %></h4>
-<% recipient.presents.each do |p|%>
-<h5><%= p.name %></h5>
-<%end%>
+    <h2><%= link_to recipient.name, recipient_path(recipient) %></h2>
+        Presents already bought for this child:
+    <% recipient.presents.each do |p|%>
+        <h3><%= p.name %></h3>
+    <%end%>
 <%end%>
 
-<%= link_to "Add A New Recipient", new_recipient_path%>
+<%= link_to "Add a child to the nice list", new_recipient_path%>
