@@ -60,8 +60,11 @@ class PresentsController < ApplicationController
     end
 
     def redirect_if_not_authorized
-        redirect_to user_presents_path(@present) if @present.user != current_user
+        if @present.user != current_user
+        flash[:message] = "You are not authorized to view this page"
+        redirect_to user_presents_path(@present)
     end
+end
 end
 
 
