@@ -4,10 +4,11 @@ class RecipientsController < ApplicationController
     # before_action :redirect_if_not_authorized, only: [:edit, :update, :destroy]
 
     def index
-        @recipients = current_user.recipients.order_recipients_by
+        @recipients = Recipient.order_recipients_by
     end
     
     def new
+        # binding.pry
         @user = current_user
         @recipient = @user.recipients.build
     end
