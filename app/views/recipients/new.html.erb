@@ -1,6 +1,6 @@
-<h1> Add a new Recipient</h1>
+<h1> Add a child to the nice list</h1>
 <%= render partial: '/layouts/errors', locals: {object: @recipient}%>
-<p>
+
 <%= form_for @recipient do |f| %>
     <%= f.label :name %><br>
     <%= f.text_field :name %><br>
@@ -8,5 +8,11 @@
     <%= f.label "Email" %><br>
     <%= f.text_field :email %><br>
 <br>
-    <%= f.submit "Create Recipient" %><br>
+    <%= f.label "Address" %><br>
+    <%= f.text_field :address %><br>    
+<br>
+    <%= f.label "Favorite Color" %><br>
+    <%= f.text_field :favorite_color %><br>
+<br>
+    <%= f.submit "Submit" %><br>
 <% end %>
