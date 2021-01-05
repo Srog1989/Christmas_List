@@ -1,7 +1,8 @@
+<%= flash[:message]%>
 <h1><%= "Welcome, #{current_user.name}" %></h1>
 <%= flash[:error]%>
 <br>
-<h3> Here are the people you have bought presents for:</h3>
+<h3> Here are the children you have bought Christmas presents for:</h3>
 <h5> Click on a present to see its details</h5>
 <% @recipients.each do |recipient|%>
 <h4><%=recipient.name %></h4>
